@@ -23,14 +23,14 @@ set title
 set autoindent
 set background=dark
 set nobackup
-set hlsearch
+set nohl " no highlight search
 set showcmd
 set cmdheight=1
 set laststatus=2
 set scrolloff=10
 set expandtab
 "let loaded_matchparen = 1
-set shell=fish
+set shell=zsh
 set backupskip=/tmp/*,/private/tmp/*
 
 
@@ -45,9 +45,6 @@ set t_BE=
 set nosc noru nosm
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
-"set showmatch
-" How many tenths of a second to blink when matching brackets
-"set mat=2
 " Ignore case when searching
 set ignorecase
 " Be smart when using tabs ;)
