@@ -5,7 +5,7 @@ source ~/.vimrc
 " ------------------------
 
 " Leader key
-let mapleader=","
+let mapleader="<space>"
 
 " init autocmd
 autocmd!
@@ -23,7 +23,7 @@ set title
 set autoindent
 set background=dark
 set nobackup
-set nohl " no highlight search
+" set nohl " no highlight search
 set showcmd
 set cmdheight=1
 set laststatus=2
@@ -68,7 +68,7 @@ autocmd InsertLeave * set nopaste
 set formatoptions+=r
 " }}}
 
-" Highlights "{{{
+" Highlighting "{{{
 " ---------------------------------------------------------------------
 set cursorline
 "set cursorcolumn
@@ -139,9 +139,9 @@ if exists("&termguicolors") && exists("&winblend")
   set pumblend=5
   set background=dark
   " Use NeoSolarized
-  let g:neosolarized_termtrans=1
-  runtime ./colors/NeoSolarized.vim
-  colorscheme NeoSolarized
+  " let g:neosolarized_termtrans=1
+  " runtime ./colors/NeoSolarized.vim
+  " colorscheme NeoSolarized
 endif
 
 "}}}
