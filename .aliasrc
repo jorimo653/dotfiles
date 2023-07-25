@@ -1,0 +1,12 @@
+# /bin/bash
+#
+alias ls="ls -p -G"
+alias ll="ls -l"
+alias lla="ls -A"
+alias cl="clear"
+alias reboot="sudo reboot"
+alias sdn="sudo showdown -h now"
+alias vim="nvim"
+alias v="nvim"
+alias ws="webstorm"
+alias love="/Applications/love.app/Contents/MacOS/love"
