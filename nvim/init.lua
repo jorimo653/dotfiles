@@ -5,7 +5,6 @@ local fn = vim.fn
 local execute = vim.api.nvim_command
 
 -- Sensible defaults
--- require('settings')
 require('base')
 
 -- Auto-install packer if not exists
@@ -18,9 +17,6 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 
 -- Install plugins
 require('plugins')
-
--- Key mappings
-require('keymappings')
 
 -- Another option is to group configuration in one folder
 require('config')

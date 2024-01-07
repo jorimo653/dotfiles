@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="jonathan"
+ZSH_THEME="half-life"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -25,13 +25,25 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# JDKs
-export JDK_DIRS="/Library/Java/JavaVirtualMachines"
-export JDK_8="$JDK_DIRS/openlogic-openjdk-8.jdk"
-export JDK_11="$JDK_DIRS/microsoft-11.jdk"
-export JDK_17="$JDK_DIRS/microsoft-17.jdk"
-
 # Set JDK and add to PATH
-export JAVA_HOME=$JDK_11
-export PATH="$PATH:/JAVA_HOME"
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current/bin"
+export PATH="$PATH:/$JAVA_HOME"
 
+export GOPATH="/usr/local/go/bin"
+export PATH="$PATH:/$GOPATH"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# bun completions
+[ -s "/Users/jrm/.bun/_bun" ] && source "/Users/jrm/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

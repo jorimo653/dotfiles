@@ -1,29 +1,13 @@
-local keymap = vim.keymap
+local map = vim.keymap.set
+local g = vim.g
 
--- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
-
--- New tab
-keymap.set('n', 'te', ':tabedit')
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w')
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
--- Move window
-keymap.set('n', '<Space>', '<C-w>w')
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
+map('n', 'ss', ':split<CR><C-w>w')
+map('n', 'sv', ':vsplit<CR><C-w>w')
 
--- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
+-- Move between windows
+map.set('', 'sh', '<C-w>h')
+map.set('', 'sk', '<C-w>k')
+map.set('', 'sj', '<C-w>j')
+map.set('', 'sl', '<C-w>l')
 
--- local utils = require('utils')
---
--- utils.map('n', '<C-l>', '<cmd>noh<CR>') -- Clear highlights
--- utils.map('i', 'jk', '<Esc>')		-- jk to escape
--- utils.map('n', '<leader>-', ':Ex<enter>')
