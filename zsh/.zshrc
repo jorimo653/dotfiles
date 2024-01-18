@@ -3,10 +3,8 @@ ZSH_THEME="half-life"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-export DOTFILES="$HOME/dotfiles"
-
 # Load aliases
-[ -f "$DOTFILES/.aliasrc" ] && source "$DOTFILES/.aliasrc"
+[ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
 
 # Editor
 if [[ -n SSH_CONNECTION ]]; then
@@ -29,21 +27,15 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current/bin"
 export PATH="$PATH:/$JAVA_HOME"
 
-export GOPATH="/usr/local/go/bin"
-export PATH="$PATH:/$GOPATH"
+export GOROOT="/usr/local/go"
+export PATH="$GOROOT/bin:$PATH"
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# opam configuration
+[[ ! -r /Users/jrm/.opam/opam-init/init.zsh ]] || source /Users/jrm/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# bun completions
-[ -s "/Users/jrm/.bun/_bun" ] && source "/Users/jrm/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
