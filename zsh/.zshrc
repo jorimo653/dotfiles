@@ -6,6 +6,9 @@ source $ZSH/oh-my-zsh.sh
 # Load aliases
 [ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
 
+# Load PAT if present
+[ -f "$HOME/.pat" ] && source "$HOME/.pat"
+
 # Editor
 if [[ -n SSH_CONNECTION ]]; then
   export EDITOR="nvim"
@@ -21,7 +24,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/VSCodium.app/Contents/Resources/app/bin"
 
 # Set JDK and add to PATH
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current/bin"
@@ -29,9 +32,6 @@ export PATH="$PATH:/$JAVA_HOME"
 
 export GOROOT="/usr/local/go"
 export PATH="$GOROOT/bin:$PATH"
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 
 # opam configuration
 [[ ! -r /Users/jrm/.opam/opam-init/init.zsh ]] || source /Users/jrm/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
